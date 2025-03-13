@@ -6,7 +6,10 @@ FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 RUN apt update --assume-yes && \
     apt install --assume-yes \
         git \
-        sudo
+        sudo \
+        build-essential \
+        libgl1 \
+        libglib2.0-0
 
 # Clones the ComfyUI repository and checks out the latest release
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /opt/comfyui && \
